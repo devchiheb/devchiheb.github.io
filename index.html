@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>redjil chiheb eddine</title>
+    <link rel="stylesheet" href="./home.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav>
+        <h1 id="logo">redjil chiheb </h1>
+        <ul id="nav-links">
+            <li><a href="home.html">home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="project.php">Project</a></li>
+            <li id="contactnav"><a href="#"><img src="./src/images/message.png"/></a></li>
+        </ul>
+    </nav>
+    <section id="hero">
+        <h1>hey , im chiheb 👋</h1>
+        <span id="role-text"><p><span style="color:#0468BF;">So</span>ftware <br> Engineer </p></span>
+        <span id="description"><p>I'm a software engineer based in Algeria. I'll help you build beautiful websites and applications</p></span>
+        <div>
+            <a href="projects.php" ><button class="cbtn">Get in Touch</button></a>
+            <a href="projects.php" ><button class="pbtn">Browse Projects</button></a>
+        </div>
+    </section>
+    <section id="about">
+        <h1 id="about-title">About me </h1>
+        <span id="about-desc">Computer Science student focused on building clean, efficient, and useful software. Interested in Linux, backend development, automation, and system-level programming. I enjoy learning by building real projects and exploring new technologies every day.</span>
+
+    </section>
+    <section id="skills">
+        <h1>Skills</h1>
+        <div id="skills-container">
+            <div class="skill">
+                <img src="./src/images/skillsicon/html.png"/>
+                <h2>html</h2>
+            </div>
+            <div class="skill">
+                <img src="src/images/skillsicon/css-3.png" />
+                <h2>css</h2>
+            </div>
+
+            <div class="skill">
+                <img src="src/images/skillsicon/js.png" />
+                <h2>javascript</h2>
+            </div>
+
+            <div class="skill">
+                <img src="./php.png" />
+                <h2>php</h2>
+            </div>
+            <div class="skill">
+                <img src="./python.png" />
+                <h2>python</h2>
+            </div>
+            <div class="skill">
+                <img src="./java.png" />
+                <h2>java</h2>
+            </div>
+             <div class="skill">
+                <img src="./lettre-c.png" />
+                <h2>c</h2>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="contactsec">
+        <h1>Contact</h1>
+        <div>
+            <a href="mailto:devchiheb@outlook.com"></a>
+            <a href="link"></a>
+            <a href=""></a>
+        </div>
+
+
+    </section>
+
+</body>
+<script>
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+</script>
+</html>    
