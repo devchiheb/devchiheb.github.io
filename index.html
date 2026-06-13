@@ -2,21 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>redjil chiheb eddine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chiheb is a software engineer from Algeria building clean websites, web applications, and automation tools.">
+    <meta name="keywords" content="Chiheb, software engineer, web developer, portfolio, Algeria, HTML, CSS, JavaScript, PHP, Python, Java, C">
+    <meta name="author" content="Chiheb">
+    <meta name="robots" content="index, follow">
+    <title>Chiheb | Software Engineer Portfolio</title>
+    <link rel="canonical" href="https://your-domain.com/">
     <link rel="stylesheet" href="./home.css">    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+     <script src="https://kit.fontawesome.com/13bdc7ad5f.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
     <nav>
-        <h1 id="logo">redjil chiheb </h1>
+        <h1 id="logo">chiheb</h1>
         <ul id="nav-links">
-            <li><a href="home.html">home</a></li>
+            <li><a href="#hero">home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="project.php">Project</a></li>
-            <li id="contactnav"><a href="#"><img src="./src/images/message.png"/></a></li>
+            <li><a href="https://github.com/devchiheb">Project</a></li>
+            <li id="contactnav"><a href="#contactsec"><img src="./message.png"/></a></li>
         </ul>
     </nav>
     <section id="hero">
@@ -24,8 +31,8 @@
         <span id="role-text"><p><span style="color:#0468BF;">So</span>ftware <br> Engineer </p></span>
         <span id="description"><p>I'm a software engineer based in Algeria. I'll help you build beautiful websites and applications</p></span>
         <div>
-            <a href="projects.php" ><button class="cbtn">Get in Touch</button></a>
-            <a href="projects.php" ><button class="pbtn">Browse Projects</button></a>
+            <a href="#contactsec" ><button class="cbtn">Get in Touch</button></a>
+            <a href="https://github.com/devchiheb" ><button class="pbtn">Browse Projects</button></a>
         </div>
     </section>
     <section id="about">
@@ -37,16 +44,16 @@
         <h1>Skills</h1>
         <div id="skills-container">
             <div class="skill">
-                <img src="./src/images/skillsicon/html.png"/>
+                <img src="./html.png"/>
                 <h2>html</h2>
             </div>
             <div class="skill">
-                <img src="src/images/skillsicon/css-3.png" />
+                <img src="./css-3.png" />
                 <h2>css</h2>
             </div>
 
             <div class="skill">
-                <img src="src/images/skillsicon/js.png" />
+                <img src="./js.png" />
                 <h2>javascript</h2>
             </div>
 
@@ -71,25 +78,68 @@
 
     </section>
     <section id="contactsec">
-        <h1>Contact</h1>
-        <div>
-            <a href="mailto:devchiheb@outlook.com"></a>
-            <a href="link"></a>
-            <a href=""></a>
+        <div class="container">
+            <div class="contact-info">
+                <h1>Contact</h1>
+                <p>I'm available for freelance projects and full-time opportunities. Reach out via any of the methods below or send a message using the form.</p>
+
+                <ul class="socials">
+                    <li><a href="mailto:devchiheb@outlook.com"><img src="./mail.png" alt="Email"/> devchiheb@outlook.com</a></li>
+                    <li><a href="https://www.linkedin.com/in/chiheb-redjile-a10137286/"><img src="./linkedin.png" alt="LinkedIn"/> LinkedIn</a></li>
+                    <li><a href="https://github.com/devchiheb"><img src="./github.png" alt="GitHub"/> GitHub</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-form">
+                <form id="contactForm">
+                    <label for="name">Name</label>
+                    <input id="name" name="from_name" type="text" required />
+
+                    <label for="email">Email</label>
+                    <input id="email" name="reply_to" type="email" required />
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+
+                    <button type="submit" class="cbtn">Send Message</button>
+                    <div id="form-message" class="form-message" aria-live="polite"></div>
+                </form>
+            </div>
         </div>
-
-
     </section>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init('e0tFk_k-ez2G2qZli');
+
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            formMessage.textContent = 'Sending message…';
+            formMessage.classList.remove('success', 'error');
+
+            emailjs.sendForm('service_remfzmg', 'template_ju1urtc', this)
+                .then(function() {
+                    formMessage.textContent = 'Message sent successfully! Thank you.';
+                    formMessage.classList.add('success');
+                    contactForm.reset();
+                }, function(error) {
+                    console.error('EmailJS send error:', error);
+                    formMessage.textContent = 'Sorry, something went wrong. Please try again later.';
+                    formMessage.classList.add('error');
+                });
+        });
+
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
-<script>
-    window.addEventListener('scroll', function() {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-    });
-</script>
 </html>    

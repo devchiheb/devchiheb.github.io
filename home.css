@@ -19,9 +19,12 @@ nav{
     transition: background-color 0.3s ease;
 }
 nav.scrolled {
-    background-color: rgba(255, 255, 255, 0);
+    background-color:var(--blue-dark);
     box-shadow: none;
-    color:#023059;
+    color:white;
+}
+nav.scrolled #nav-links li a{
+    color:white;
 }
 body{
     font-family: var(--font1);
@@ -155,4 +158,148 @@ body{
     width: 50px;
     height: 50px;
     margin-bottom: 15px;
+}
+/*contact section*/
+#contactsec h1 {
+    font-size: 28px;
+}
+
+#contactsec{
+    margin-top:50px;
+    padding:40px 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+}
+#contactsec .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+#contactsec .contact-info h1{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+#contactsec .contact-info p{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+#contactsec .socials{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+#contactsec .socials li a{
+    text-decoration: none;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+#contactsec .socials img{
+    width: 28px;
+    height: 28px;
+}
+#contactsec .contact-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+#contactsec input[type="text"],
+#contactsec input[type="email"],
+#contactsec textarea{
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--font1);
+}
+#contactsec .cbtn{
+    align-self: flex-start;
+}
+#form-message{
+    margin-top: 12px;
+    font-size: 15px;
+    min-height: 22px;
+}
+#form-message.success{
+    color: #0a7f29;
+}
+#form-message.error{
+    color: #c01c3c;
+}
+@media (max-width: 800px){
+    #contactsec .container{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive adjustments and effects */
+@media (max-width: 700px){
+    nav{
+        padding: 12px 16px;
+    }
+    #logo{ font-size: 22px; }
+    #nav-links{ gap: 18px; }
+    #hero{ margin-top:60px; }
+    #role-text{ font-size:36px; }
+    #description{ font-size:18px; }
+}
+
+@media (max-width: 420px){
+    #nav-links{ gap: 12px; font-size:14px; }
+    #role-text{ font-size:28px; letter-spacing:2px; }
+    #description{ font-size:16px; }
+}
+
+/* subtle entrance animation */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+#contactsec .container{
+    animation: fadeUp 700ms ease both;
+}
+
+/* social icon hover effects */
+#contactsec .socials li a{
+    transition: transform 180ms ease, color 180ms ease;
+}
+#contactsec .socials li a:hover{
+    transform: translateX(6px) scale(1.03);
+    color: var(--blue-light);
+}
+
+/* inputs focus */
+#contactsec input:focus, #contactsec textarea:focus{
+    outline: none;
+    box-shadow: 0 6px 18px rgba(4,104,191,0.12);
+    border-color: var(--blue-light);
+}
+
+/* accessible focus for buttons */
+.cbtn:focus{
+    box-shadow: 0 0 0 4px rgba(4,104,191,0.12);
+}
+
+/* small floating effect for skill cards and buttons */
+#skills-container .skill, .cbtn, .pbtn{
+    will-change: transform;
+}
+#skills-container .skill:hover{
+    transform: translateY(-8px) scale(1.01);
+}
+
+/* add a gentle hover to contact form card */
+#contactsec .contact-form{
+    transition: box-shadow 220ms ease, transform 220ms ease;
+}
+#contactsec .contact-form:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(2,48,89,0.06);
 }
